@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Roboto:ital@1&display=swap');
+
+* {
+  /* font-family: 'Ephesis', cursive; */
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: transparent;
+}
+
+.search-form {
+  margin-right: 190px;
+  margin-left: 450px;
+}
+
+.fontIcons {
+  margin-left: 6px;
+}
+
+.search-text {
+  border: none;
+}
+
+.search-text:hover {
+  border: none;
+}
+
+.search-btn {
+  border: none;
+}
