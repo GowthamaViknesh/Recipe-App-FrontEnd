@@ -2,6 +2,8 @@ import Banner from '../assets/opening Banner.png';
 import PromotionBanner from '../assets/PromotionBanner.png';
 import GrandBanner from '../assets/GrandBanner.png';
 import CookingVideo from '../assets/video.mp4';
+import CoffeeBanner from '../assets/CoffeeBanner.png';
+
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
@@ -11,11 +13,13 @@ import {
   faBowlFood,
   faBowlRice,
   faCookieBite,
+  faGolfBallTee,
   faKitchenSet,
   faTrophy,
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import {
+  faAppStore,
   faFacebook,
   faGooglePlus,
   faInstagram,
@@ -374,6 +378,62 @@ const HomePage = () => {
               />
               Create your Account
             </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className='container rec-cont'>
+        <h3 className='text-center'>
+          <FontAwesomeIcon icon={faAppStore} /> Features
+        </h3>
+        <div className='row'>
+          <div className='col-md-4'>
+            <img
+              src='https://i.pinimg.com/564x/59/5f/a5/595fa5ffb3d67f62ceabaa0d9a40d1e2.jpg'
+              className='feat-image'
+            />
+            <br />
+            <h3 className='text-center mt-4'>All types of Cooking</h3>
+          </div>
+          <div className='col-md-4'>
+            <img
+              src='https://i.pinimg.com/236x/22/17/2c/22172c9640d3aa8af8ae71969afd6f9c.jpg'
+              className='feat-images'
+            />
+            <br />
+            <h3 className='text-center mt-4'>
+              Worlds best Recpies from our Chefs
+            </h3>
+          </div>
+          <div className='col-md-4'>
+            <img
+              src='https://i.pinimg.com/564x/29/df/d7/29dfd7d283cb22b72eb779ee647e438c.jpg'
+              className='feat-image'
+            />
+            <br />
+            <h3 className='text-center mt-4'>Just look and Cook Recepies</h3>
+          </div>
+        </div>
+      </div>
+
+      <div className='container rec-cont'>
+        <div className='row'>
+          <div className='col-md-6 fpara'>
+            <h4 className='text-center'>
+              <FontAwesomeIcon icon={faGolfBallTee} /> Exiciting Offers
+            </h4>
+            <h6 className='text-center'>
+              Don't Miss Out on Flavorful Savings
+              <br />
+              <span>
+                Indulge in the art of cooking with our limited-time offers!
+                Seize the opportunity to create mouthwatering dishes while
+                enjoying unbeatable discounts on premium ingredients.
+              </span>
+            </h6>
+          </div>
+          <div className='col-md-6'>
+            <img src={CoffeeBanner} alt='logo' className='fe-image mt-4' />
           </div>
         </div>
       </div>
