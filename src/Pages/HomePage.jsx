@@ -1,11 +1,28 @@
 import Banner from '../assets/opening Banner.png';
 import PromotionBanner from '../assets/PromotionBanner.png';
 import GrandBanner from '../assets/GrandBanner.png';
+import CookingVideo from '../assets/video.mp4';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faKitchenSet, faTrophy } from '@fortawesome/free-solid-svg-icons';
+import {
+  faArrowAltCircleRight,
+  faBowlFood,
+  faBowlRice,
+  faCookieBite,
+  faKitchenSet,
+  faTrophy,
+} from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+import {
+  faFacebook,
+  faGooglePlus,
+  faInstagram,
+  faLinkedinIn,
+  faXTwitter,
+} from '@fortawesome/free-brands-svg-icons';
+
 const HomePage = () => {
   const [rec, setRec] = useState([]);
 
@@ -98,10 +115,10 @@ const HomePage = () => {
         </button>
       </div>
       <br />
-      <div className='container mt-4'>
-        <h1 className='text-center'>
+      <div className='container mt-5' style={{ marginBottom: '15px' }}>
+        <h3 className='text-center'>
           <FontAwesomeIcon icon={faTrophy} /> Top Recipes
-        </h1>
+        </h3>
         <div className='row mt-5'>
           {rec.map((item, index) => (
             <div className='col-md-3' key={index}>
@@ -112,118 +129,253 @@ const HomePage = () => {
                   className='card-image'
                 />
                 <div className='card-body'>
-                  <h5 className='card-title'>{item.name}</h5>
-                  <a href='#' className='btn btn-primary'>
-                    Go somewhere
-                  </a>
+                  <h5 className='card-title text-center mt-2'>{item.name}</h5>
+                  <Link to='/recepies' className='btn mt-4 mx-5'>
+                    Explore
+                  </Link>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
-      <div className='container mt-5'>
+      <div className='container rec-cont'>
         <h3 className='text-center'>
           <FontAwesomeIcon icon={faKitchenSet} /> Recipes Creators
         </h3>
-        <section class='articles'>
-          <article>
-            <div class='article-wrapper'>
-              <figure>
-                <img src='https://picsum.photos/id/1011/800/450' alt='' />
-              </figure>
-              <div class='article-body'>
-                <h2>This is some title</h2>
-                <p>
-                  Curabitur convallis ac quam vitae laoreet. Nulla mauris ante,
-                  euismod sed lacus sit amet, congue bibendum eros. Etiam mattis
-                  lobortis porta. Vestibulum ultrices iaculis enim imperdiet
-                  egestas.
-                </p>
-                <a href='#' class='read-more'>
-                  Read more{' '}
-                  <span class='sr-only'>about this is some title</span>
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    class='icon'
-                    viewBox='0 0 20 20'
-                    fill='currentColor'
-                  >
-                    <path
-                      fill-rule='evenodd'
-                      d='M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z'
-                      clip-rule='evenodd'
+        <div className='row' style={{ marginTop: '50px' }}>
+          <div className='col-md-4'>
+            <div className='card-container'>
+              <div className='img-container'>
+                <img
+                  src='https://tajdining.com/uploads/chefs/small/53_small_2022_07_26_03_37_47.jpg'
+                  alt=''
+                />
+              </div>
+              <ul className='social-media'>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon
+                      icon={faFacebook}
+                      className='fa fa-facebook'
+                      style={{ color: '#0866FF' }}
                     />
-                  </svg>
-                </a>
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon
+                      icon={faXTwitter}
+                      className='fa fa-twitter'
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon
+                      icon={faInstagram}
+                      className='fa fa-google-plus'
+                      style={{ color: '#E94B55' }}
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon
+                      icon={faGooglePlus}
+                      className='fa fa-linkedin'
+                      style={{ color: '#D54D41' }}
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon
+                      icon={faLinkedinIn}
+                      className='fa fa-instagram'
+                      style={{ color: '#0077B5' }}
+                    />
+                  </a>
+                </li>
+              </ul>
+              <div className='user-info'>
+                <h2>Aniket Singh</h2>
+                <span>
+                  <FontAwesomeIcon
+                    icon={faCookieBite}
+                    style={{ color: '#A9774B' }}
+                  />{' '}
+                  Junior Chef
+                </span>
               </div>
             </div>
-          </article>
-          <article>
-            <div class='article-wrapper'>
-              <figure>
-                <img src='https://picsum.photos/id/1005/800/450' alt='' />
-              </figure>
-              <div class='article-body'>
-                <h2>This is some title</h2>
-                <p>
-                  Curabitur convallis ac quam vitae laoreet. Nulla mauris ante,
-                  euismod sed lacus sit amet, congue bibendum eros. Etiam mattis
-                  lobortis porta. Vestibulum ultrices iaculis enim imperdiet
-                  egestas.
-                </p>
-                <a href='#' class='read-more'>
-                  Read more{' '}
-                  <span class='sr-only'>about this is some title</span>
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    class='icon'
-                    viewBox='0 0 20 20'
-                    fill='currentColor'
-                  >
-                    <path
-                      fill-rule='evenodd'
-                      d='M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z'
-                      clip-rule='evenodd'
+          </div>
+          <div className='col-md-4'>
+            <div className='card-container'>
+              <div className='img-container'>
+                <img
+                  src='https://img.freepik.com/premium-photo/handsome-chef-presenting-meal_107420-17688.jpg'
+                  alt=''
+                />
+              </div>
+              <ul className='social-media'>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon
+                      icon={faFacebook}
+                      className='fa fa-facebook'
+                      style={{ color: '#0866FF' }}
                     />
-                  </svg>
-                </a>
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon
+                      icon={faXTwitter}
+                      className='fa fa-twitter'
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon
+                      icon={faInstagram}
+                      className='fa fa-google-plus'
+                      style={{ color: '#E94B55' }}
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon
+                      icon={faGooglePlus}
+                      className='fa fa-linkedin'
+                      style={{ color: '#D54D41' }}
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon
+                      icon={faLinkedinIn}
+                      className='fa fa-instagram'
+                      style={{ color: '#0077B5' }}
+                    />
+                  </a>
+                </li>
+              </ul>
+              <div className='user-info'>
+                <h2>Sam Jordan</h2>
+                <span>
+                  <FontAwesomeIcon
+                    icon={faCookieBite}
+                    style={{ color: '#A9774B' }}
+                  />{' '}
+                  Senior Chef
+                </span>
               </div>
             </div>
-          </article>
-          <article>
-            <div class='article-wrapper'>
-              <figure>
-                <img src='https://picsum.photos/id/103/800/450' alt='' />
-              </figure>
-              <div class='article-body'>
-                <h2>This is some title</h2>
-                <p>
-                  Curabitur convallis ac quam vitae laoreet. Nulla mauris ante,
-                  euismod sed lacus sit amet, congue bibendum eros. Etiam mattis
-                  lobortis porta. Vestibulum ultrices iaculis enim imperdiet
-                  egestas.
-                </p>
-                <a href='#' class='read-more'>
-                  Read more{' '}
-                  <span class='sr-only'>about this is some title</span>
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    class='icon'
-                    viewBox='0 0 20 20'
-                    fill='currentColor'
-                  >
-                    <path
-                      fill-rule='evenodd'
-                      d='M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z'
-                      clip-rule='evenodd'
+          </div>
+          <div className='col-md-4'>
+            <div className='card-container'>
+              <div className='img-container'>
+                <img
+                  src='https://img.freepik.com/free-photo/medium-shot-chef-showing-approval_23-2148723254.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1699488000&semt=ais'
+                  alt=''
+                />
+              </div>
+              <ul className='social-media'>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon
+                      icon={faFacebook}
+                      className='fa fa-facebook'
+                      style={{ color: '#0866FF' }}
                     />
-                  </svg>
-                </a>
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon
+                      icon={faXTwitter}
+                      className='fa fa-twitter'
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon
+                      icon={faInstagram}
+                      className='fa fa-google-plus'
+                      style={{ color: '#E94B55' }}
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon
+                      icon={faGooglePlus}
+                      className='fa fa-linkedin'
+                      style={{ color: '#D54D41' }}
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>
+                    <FontAwesomeIcon
+                      icon={faLinkedinIn}
+                      className='fa fa-instagram'
+                      style={{ color: '#0077B5' }}
+                    />
+                  </a>
+                </li>
+              </ul>
+              <div className='user-info'>
+                <h2>Andreson</h2>
+                <span>
+                  <FontAwesomeIcon
+                    icon={faCookieBite}
+                    style={{ color: '#A9774B' }}
+                  />{' '}
+                  Head Chief Chef
+                </span>
               </div>
             </div>
-          </article>
-        </section>
+          </div>
+        </div>
+      </div>
+      <div className='container rec-cont'>
+        <h3 className='text-center'>
+          <FontAwesomeIcon icon={faBowlRice} />
+          {'  '}
+          Create your Own Recepie
+        </h3>
+        <div className='row'>
+          <div className='col-md-6 video-container'>
+            <video className='video-dope mt-5' autoPlay loop>
+              <source src={CookingVideo} type='video/mp4'></source>
+            </video>
+          </div>
+          <div className='col-md-6 video-container'>
+            <h4 className='text-center text-cont'>
+              Create a <FontAwesomeIcon icon={faBowlFood} /> Recpie on Own
+            </h4>
+            <p className='text-center'>
+              You can create a own recpie and make a post on our website and
+              gain follwers become a chef master{' '}
+            </p>
+            <h5 className='text-center'>
+              <span>Dont Wait!!</span>
+            </h5>
+            <Link to='/login' className='text-center link'>
+              <FontAwesomeIcon
+                icon={faArrowAltCircleRight}
+                style={{ marginTop: '4px', marginRight: '5px' }}
+              />
+              Create your Account
+            </Link>
+          </div>
+        </div>
       </div>
     </>
   );
